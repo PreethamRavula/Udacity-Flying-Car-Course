@@ -6,17 +6,26 @@ Exciting time to focus on flying cars, we already see the basic version of a fly
 
 Flying cars is going to be a state of the art industry, Companies focusing on flying cars in the present time are:
 1) Airbus
+
 2)Kitty Hawk
+
 3)Tencent
+
 4)NASA
+
 5)Boeing
+
 6)UBER
 
 Projects being Built in this Course:
 1) The Backyard Flyer
+
 2)3D motion Planning
-3)Building a controller for Quadrotor in C++
+
+3)Building a controller for Quad-rotor in C++
+
 4)Estimation of a Flying vehicle's position
+
 5)Fixed wing control Project
 
 
@@ -28,30 +37,34 @@ Projects being Built in this Course:
 Autonomous flight is not a new thing if you have ever been on an airplane then you have already flew in an autonomous vehicle, the basics about autonomous flight can be best learned by learning about quadrotors, which later in this Course will be writing a code to make it fly autonomously.
 
 
-Wilbur and orville wright brother were first one's to create an aircraft back in 1903 near kittyhawk, north carolina, the reason why there aircraft worked is due to the grater control of the airplane rather than stability, pilot had easier control over the airplane which made the flight possible, after that Elmer sperry invented the first autopilot know as "Mechanical Mike" which had a couple of gyroscopes that kept the airplane stable and helped in navigational tasks.
+Wilbur and Orville wright brother were first one's to create an aircraft back in 1903 near kittyhawk, north carolina, the reason why there aircraft worked is due to the grater control of the airplane rather than stability, pilot had easier control over the airplane which made the flight possible, after that Elmer sperry invented the first autopilot know as "Mechanical Mike" which had a couple of gyroscopes that kept the airplane stable and helped in navigational tasks.
 
 
 #Vehicle Morphology:  
 
-To invesigate which aircraft configuration best suits the flying car, there are 2 configurations to consider 1) fixed wing style 2) rotary wing style, both have their own advantages, fixed style has higher flight efficiency and can travel larger distances, while rotary wing style had VTOL capability, the ability to land and takeoff vertically which makes it suitable for urban environment.
+To investigate which aircraft configuration best suits the flying car, there are 2 configurations to consider 1) fixed wing style 2) rotary wing style, both have their own advantages, fixed style has higher flight efficiency and can travel larger distances, while rotary wing style had VTOL capability, the ability to land and takeoff vertically which makes it suitable for urban environment.
 
 
 #Why Quadrotors:
 
-Quadrotors are tiny flying helicopters with 4 propellers, they are chosen as the platform to test code of Flying cars because of their light weight structure, cheaply available electronics such as flight controller and high density batteries such as Lipo and miniature GPS available in the market makes it suitable to learn about drones.
+Quad-rotors are tiny flying helicopters with 4 propellers, they are chosen as the platform to test code of Flying cars because of their light weight structure, cheaply available electronics such as flight controller and high density batteries such as Lipo and miniature GPS available in the market makes it suitable to learn about drones.
 
 
 #Basic Quadrotor components:
 
-A quadrotor has 4 propellers attached to motor sitting on an X-frame, the propellers sitting opposite to each other basically rotate in the same direction, to cancel out the torque generated from each pair, apart from that a basic quadrotor has following components:
+A quad-rotor has 4 propellers attached to motor sitting on an X-frame, the propellers sitting opposite to each other basically rotate in the same direction, to cancel out the torque generated from each pair, apart from that a basic quad-rotor has following components:
 
 1) An IMU
+
 2)GPS
+
 3)Camera
+
 4)Flight controller
+
 5)Autopilot
 
-# Below picture indicates the motor directions of a quadrotor:
+# Below picture indicates the motor directions of a quad-rotor:
 
 ![Motor_Directions](/Images/motor-directions.jpeg)
 
@@ -109,7 +122,7 @@ We know it takes to change thrust vectors of four motors on a quad-rotor to move
 #Drone axis Diagram:
 
 
-![quadrotor_axis](Images/Drone Axis Diagram.png)
+![quadrotor_axis](Images/Drone_Axis_Diagram.png)
 
 
 #6) Autopilot:
@@ -154,4 +167,4 @@ Flight computer is the brain of the drone which plans the high level stuff, it i
 ![The_position_Control_Loop](Images/Position_Control_Loop.png)
 
 
-                                                *END OF SECOND MODULE*
+                                                  *END OF SECOND MODULE*

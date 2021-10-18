@@ -207,4 +207,4 @@ There are two modes for the drone in a simulator:
 ## Manual Mode:
 
 
-[![Quad_Manual_Mode](Quad_Manual_Mode_pic.png)](https://youtu.be/l7H_LN24nfk)
+[![Quad_Manual_Mode](Images/Quad_Manual_Mode_pic.png)](https://youtu.be/l7H_LN24nfk)

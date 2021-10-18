@@ -9,28 +9,38 @@ Flying cars is going to be a state of the art industry, Companies focusing on fl
 
 1) Airbus
 
- 2)Kitty Hawk
 
- 3)Tencent
+2)Kitty Hawk
 
- 4)NASA
 
- 5)Boeing
+3)Tencent
 
- 6)UBER
+
+4)NASA
+
+
+5)Boeing
+
+
+6)UBER
+
 
 Projects being Built in this Course:
 
 
 1) The Backyard Flyer
 
- 2)3D motion Planning
 
- 3)Building a controller for Quad-rotor in C++
+2)3D motion Planning
 
- 4)Estimation of a Flying vehicle's position
 
- 5)Fixed wing control Project
+3)Building a controller for Quad-rotor in C++
+
+
+4)Estimation of a Flying vehicle's position
+
+
+5)Fixed wing control Project
 
 
                                                 *END OF FIRST MODULE*
@@ -61,13 +71,17 @@ A quad-rotor has 4 propellers attached to motor sitting on an X-frame, the prope
 
 1) An IMU
 
- 2)GPS
 
- 3)Camera
+2)GPS
 
- 4)Flight controller
 
- 5)Autopilot
+3)Camera
+
+
+4)Flight controller
+
+
+5)Autopilot
 
 ## Below picture indicates the motor directions of a quad-rotor:
 
@@ -183,6 +197,7 @@ The Goal of this project is to implement a simple flight plan for a drone using 
 
 There are two modes for the drone in a simulator:
 
+
  1) Manual- user is the pilot and motors need to be armed before performing tasks
 
 
@@ -192,4 +207,4 @@ There are two modes for the drone in a simulator:
 ## Manual Mode:
 
 
-![Quad_Manual_Mode](https://youtu.be/l7H_LN24nfk)
+[![Quad_Manual_Mode](Quad_Manual_Mode_pic.png)](https://youtu.be/l7H_LN24nfk)

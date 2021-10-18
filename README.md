@@ -43,7 +43,7 @@ Projects being Built in this Course:
 5)Fixed wing control Project
 
 
-                                                *END OF FIRST MODULE*
+                                              *END OF FIRST MODULE*           
 
 
 ## Module-2: Autonomous FLIGHT
@@ -186,7 +186,7 @@ Flight computer is the brain of the drone which plans the high level stuff, it i
 ![The_position_Control_Loop](Images/Position_Control_Loop.png)
 
 
-                                                *END OF SECOND MODULE*
+                                            *END OF SECOND MODULE*          
 
 
 # PROJECT-1: THE BACKYARD FLYER
@@ -204,7 +204,38 @@ There are two modes for the drone in a simulator:
  2)Guided- Autonomous mode, drone can be controlled by providing scripts to the flight controller
 
 
-## Manual Mode:
+## Manual Mode Video:
+
+Click on the Picture to view the Video
 
 
 [![Quad_Manual_Mode](Images/Quad_Manual_Mode_pic.png)](https://youtu.be/l7H_LN24nfk)
+
+
+Before running the code, environment setup need to be done in miniconda, after downland all the necessary requirements and repositories we can activate the environment using following command:
+
+```
+
+$ source activate fcnd
+```
+
+##Guided mode drone control:
+
+Now we write our own python code to make the drone move by itself in self-guided mode, for that 3 pre-requisites must be fulfilled:
+
+
+1) Activate the Environment.
+
+2)Open the python shell or python notebook.
+
+3)Make sure the simulator is open and guided mode is selected.
+
+Click on the picture to view the Video:
+
+
+[![Quad_Guided_Mode](Images/Drone_Guided_Mode_pic.png)](https://youtu.be/8Yp-g_g8OAc)
+
+
+##Event Driven programming:
+
+Event driven programming is paradigm in which flow execution is defined by external events rather than following a predefined sequence of Steps, we use this paradigm while making GUI's, Drones and Chatbots.

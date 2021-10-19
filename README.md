@@ -29,19 +29,19 @@
 Projects being Built in this Course:
 
 
-- [The Backyard Flyer][df1]
+- [The Backyard Flyer]
 
 
-- [3D motion Planning][df1]
+- [3D motion Planning]
 
 
-- [Building a controller for Quad-rotor in C++][df1]
+- [Building a controller for Quad-rotor in C++]
 
 
-- [Estimation of a Flying vehicle's position][df1]
+- [Estimation of a Flying vehicle's position]
 
 
-- [Fixed wing control Project][df1]
+- [Fixed wing control Project]
 
 
                                               *END OF FIRST MODULE*           

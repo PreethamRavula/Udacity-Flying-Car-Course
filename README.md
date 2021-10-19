@@ -29,19 +29,19 @@
 Projects being Built in this Course:
 
 
-- [The Backyard Flyer]
+- The Backyard Flyer
 
 
-- [3D motion Planning]
+- 3D motion Planning
 
 
-- [Building a controller for Quad-rotor in C++]
+- Building a controller for Quad-rotor in C++
 
 
-- [Estimation of a Flying vehicle's position]
+- Estimation of a Flying vehicle's position
 
 
-- [Fixed wing control Project]
+- Fixed wing control Project
 
 
                                               *END OF FIRST MODULE*           
@@ -226,7 +226,7 @@ Click on the Picture to view the Video:
 
 > Before running the code, environment setup need to be done in miniconda, after downland all the necessary requirements and repositories we can activate the environment using following command:
 
-```
+```sh
 $ source activate fcnd
 ```
 

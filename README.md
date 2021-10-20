@@ -255,3 +255,9 @@ Click on the picture to view the Video:
 ## Event Driven programming:
 
 > Event driven programming is paradigm in which flow execution is defined by external events rather than following a predefined sequence of Steps, we use this paradigm while making GUI's, Drones and Chatbots.
+
+
+> We use this Event driven programming in coding flight plans for drones, these flight plans are dependent on what are called as phases.
+
+
+![Quadrotor_Flight_Phases](Flight_Phases.png)

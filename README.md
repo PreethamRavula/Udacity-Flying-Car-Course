@@ -260,4 +260,4 @@ Click on the picture to view the Video:
 > We use this Event driven programming in coding flight plans for drones, these flight plans are dependent on what are called as phases.
 
 
-![Quadrotor_Flight_Phases](Flight_Phases.png)
+![Quadrotor_Flight_Phases](Images/Flight_Phases.png)

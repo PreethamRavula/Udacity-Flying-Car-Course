@@ -44,7 +44,7 @@ Projects being Built in this Course:
 - Fixed wing control Project
 
 
-                                              *END OF FIRST MODULE*           
+                                             **END OF FIRST MODULE**           
 
 
 ## Module-2: Autonomous FLIGHT
@@ -198,7 +198,7 @@ Projects being Built in this Course:
 ![The_position_Control_Loop](Images/Position_Control_Loop.png)
 
 
-                                            *END OF SECOND MODULE*          
+                                            **END OF SECOND MODULE**         
 
 
 # PROJECT-1: THE BACKYARD FLYER
@@ -261,3 +261,44 @@ Click on the picture to view the Video:
 
 
 ![Quadrotor_Flight_Phases](Images/Flight_Phases.png)
+
+## Terminology:
+
+
+> Udacity Drone Python API provides a protocol agnostic API for communicating with the Drone, what it means is method of data transmission is irrelevant to program or device's function.
+
+> The above API has two types of classes the Drone class and the connection classes
+
+> The Drone class provides the representation of Physical (or) simulated drone exposing the core API enabling interaction with the connected drone. Through this class we are able to retrieve the state information of the vehicle and send various commands, this is communication protocol independent meaning, the code we write will work on any drone (or) simulator with an implementation of Connection class.
+
+>Connection classes are protocol specific implementation of abstract 'Connection' class enabling the drone to be configured to communicate over several different protocols used with drones today, while the Drone API is designed to be independent of the protocol, in order to communicate with different types of drones, implementation of each designed protocol must be built in the backend.Currently Udacidrone supports
+
+- Mavlink protocol, which is on any PX4 powered drone
+
+- cflib protocol, the API used for Bitcraze drone
+
+
+###### Drone API Class:
+
+> Drone class takes in a connection that is subclass of the abstract 'Connection' class, through this connection Drone class keeps it's state attributes updated and finally we can control drone's behavior through this class.
+
+- Commands:
+
+|    **Function**   |                     **Description**                         |
+|-------------------|-------------------------------------------------------------|
+|   start()         | start the connection to the drone (be it simulated or real) |
+|   stop()	        | stop the connection to the drone                            |
+|   take_control()  |	take control of the drone -> this configures the drone to start accepting different commands from Python|
+|release_control() |	give up control of the drone -> this configures the drone to stop accepting commands from Python and return to accepting manual user input |
+| arm() |	arm the drone to put it in a state ready for takeoff. Until the drone is armed, no motor related commands will be executed|
+|disarm()|	disarm the drone to put it in a state with the motors effectively turned off
+takeoff(target_altitude)	command the drone to takeoff to the specified altitude in meters|
+|land()|	command the drone to land at the current position|
+|cmd_position(north, east, altitude, heading)|	command the drone to move to a specific (N, E, altitude) defined position (in meters) with a specific heading (in radians)|
+|cmd_velocity(velocity_north, velocity_east, velocity_down, heading)|	command the drone to have the specified current velocity (in meters/second) and heading (in radians)|
+|cmd_attitude(roll, pitch, yawrate, thrust)|	command the drone to the specified attitude, where roll and pitch are in radian, yawrate is the desired rate of heading change in radian/second and thrust is the desired vertical acceleration in meters/second^2|
+|cmd_attitude_rate(roll_rate, pitch_rate, yaw_rate, thrust)|	command the drone to have the specified attitude rates in radians/second and thrust (vertical acceleration) in meters/second^2|
+|cmd_moment(roll_moment, pitch_moment, yaw_moment, thrust)|	command a moment in Newton*meters and a vertical force in Netwons|
+|set_home_position(longitude, latitude, altitude)|	set the GPS home position for the drone. This changes the origin point of the local NED frame and therefore adjusts the local position information.|
+|start_log(directory, name)|	start logging telemetry data to the specified directory with the specified filename.|
+|stop_log()	|stop logging telemetry data|

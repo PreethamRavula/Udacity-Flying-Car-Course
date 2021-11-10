@@ -44,7 +44,8 @@ Projects being Built in this Course:
 - Fixed wing control Project
 
 
-                                             **END OF FIRST MODULE**           
+                                             END OF FIRST MODULE           
+---
 
 
 ## Module-2: Autonomous FLIGHT
@@ -198,7 +199,8 @@ Projects being Built in this Course:
 ![The_position_Control_Loop](Images/Position_Control_Loop.png)
 
 
-                                            **END OF SECOND MODULE**         
+                                              END OF SECOND MODULE
+---         
 
 
 # PROJECT-1: THE BACKYARD FLYER
@@ -280,9 +282,12 @@ Click on the picture to view the Video:
 
 ###### Drone API Class:
 
+
 > Drone class takes in a connection that is subclass of the abstract 'Connection' class, through this connection Drone class keeps it's state attributes updated and finally we can control drone's behavior through this class.
 
-- Commands:
+
+###### Commands:
+
 
 |    **Function**   |                     **Description**                         |
 |-------------------|-------------------------------------------------------------|
@@ -302,3 +307,99 @@ takeoff(target_altitude)	command the drone to takeoff to the specified altitude 
 |set_home_position(longitude, latitude, altitude)|	set the GPS home position for the drone. This changes the origin point of the local NED frame and therefore adjusts the local position information.|
 |start_log(directory, name)|	start logging telemetry data to the specified directory with the specified filename.|
 |stop_log()	|stop logging telemetry data|
+
+
+###### Reference Frames:
+
+
+> There are two type of reference frames Global positions are defined as [longitude, latitude, altitude(positive up)] local reference frames are [North, East, Down(positive down)] relative to nearby global home provided, both references are right handed and global reference is what provided by the gps.
+
+
+###### Drone attributes:
+
+
+| **ATTRIBUTE** | **FORMAT** | **DESCRIPTION** |
+|---------------|------------|-----------------|
+| connected | boolean | the connected state of the API to the drone |
+| armed |	boolean |	whether or not the drone is currently armed. Armed means that the drone's motors are running and ready to take inputs. Until the drone is armed, no motor inputs will create any effects (the motors are effectively turned off until the drone is armed) |
+| guided | boolean | whether or not the drone is currently in a guided mode. Guided mode means that the python script has control of the drone. Until the drone is put into guided mode, no commands sent to it from a script will be executed. |
+| attitude | [roll (degree), pitch (degree), yaw (degree)] | the current attitude of the drone |
+| global_position | [longitude (degree), latitude (degree), altitude (meter)] | the current GPS position of the drone |
+| global_home | [longitude (degree), latitude (degree), altitude (meter)] | the GPS position of the "home" location of the drone |
+| local_position | [north (meter), east (meter), down (meter)] | the current local position of the drone. Local position being defined as the NED position of the drone with respect to some (0,0,0) (the home position) |
+| local_velocity | [vnorth (meter/second), veast (meter/second), vdown (meter/second)] | The current velocity vector of the drone in meters/second, represented in the local NED frame |
+| acceleration_raw | [x (), y (), z ()] | a vector of the raw accelerations measurement of the drone in the body frame |
+| gyro_raw | [x (), y (), z ()] | a vector of the raw gyroscope measurement of the drone in the body frame |
+| barometer | alt(meter) | the current altitude of the drone (in meters) as measured solely by the barometer onboard a vehicle (or simulated) |
+
+
+> As new information about drone is passes to Drone through connection, various attributes will be updated. Callbacks are functions that can be registered to be called when specific set of attributes are updated.
+
+> 2 steps needed to create and register a callback:
+
+
+- Create the callback function:
+
+
+> Callback functions are defined as member functions of our custom class subclassing the Drone class.
+
+
+- Register a Callback:
+
+
+ > Each callback needs to be registered in order to have the callback function called when appropriate attributes are updated.
+
+> Here are different attribute changes that can be communicated in form of messages:
+
+
+| **MESSAGE NAME** | **DATA TYPE** | **DESCRIPTION** |
+|--------------|-----------|-------------|
+| MsgID.STATE |	StateMessage | changes in either the armed state of the drone or the control state (namely whether or not the drone is configured to take external commands from a script) |
+| MsgID.GLOBAL_POSITION |	GlobalFrameMessage | new GPS position of the drone |
+| MsgID.LOCAL_POSITION | LocalFrameMessage | new local NED position of the drone |
+| MsgID.GLOBAL_HOME | GlobalFrameMessage | new GPS home position of the drone |
+| MsgID.LOCAL_VELOCITY | LocalFrameMessage | new velocity vector of the drone |
+| MsgID.CONNECTION_CLOSED |	n/a | connection to the drone has been terminated. This means that attributes will no longer be updated and all drone facing commands will not be executed by the drone. |
+| MsgID.RAW_GYROSCOPE | BodyFrameMessage | new raw gyroscope values |
+| MsgID.RAW_ACCELEROMETER | BodyFrameMessage | new raw accelerometer information |
+| MsgID.BAROMETER | n/a | new barometric pressured based altitude information |
+| MsgID.DISTANCE_SENSOR |	DistanceMessage | new distance measurement information (e.g. from onboard sonar or stereo vision sensors) |
+| MsgID.ATTITUDE | BodyFrameMessage | new attitude information |
+
+## The Backyard Flyer Project Description and implementation on a real drone:
+
+> The script involves making drone perform a square autonomously, for that we use the event-driven programming paradigm rather then following the the sequential execution, coding is executed in response to the environment, in this case as drone moves closer to its goal position, the code gets executed with respect to changes in its position and velocity.
+
+> For this purpose we define flight states, in this case we have 6 flight states:
+
+- Manual State
+- Armed State
+- Takeoff State
+- Waypoint State
+- Landing State
+- Disarmed State
+
+> To achieve each of this states the drone has to go through transitions, so in between each of these states we have transition states:
+
+- Arming Transition
+- Takeoff Transition
+- Waypoint Transition
+- Landing Transition
+- Disarming Transition
+- Manual Transition
+
+> We write functions for each of these transition states in our script and also write callback functions for registering change in position and velocity when transitioning through these states and in these callback functions we incorporate at what point these transition states should occur so the drone wouldn't need any additional input from the pilot.
+
+# Project - 1 Implementation Video in the Simulator:
+
+
+[![Backyard_flyer](Images/Backyard_flyer_pic.png)](https://youtu.be/SYxFXbDpFog)
+
+
+## Real Drone implmentation using Bitcraze:
+
+
+###### Parts list:
+
+
+![Drone_parts](Images/Bitcraze_drone_parts.jpg)

@@ -422,3 +422,48 @@ takeoff(target_altitude)	command the drone to takeoff to the specified altitude 
 
 
 - update waypoint acceptance thresholds
+
+
+<h2 align = "center">END OF CHAPTER-1</h2>
+
+
+<h3 align = "center">CHAPTER - 2: PLANNING</h3>
+
+## Second Module: Planning as Search
+
+> Planning is the section where we learn implementing drone finding a way in an environment
+
+- The main idea of a planning problem is to create a viable search space and parse through it to reach the final destination but for an flying vehicle this is a more diverse problem and dependent on lot of other factors.
+
+- The planning problem can get very complicated due to different possibilities involved with the given constraints so the problems comes to not finding the best solution but a reasonable solution.
+
+- Therefore in order to represent the planning problem and define my search space, we must have the following:
+
+1. All possible states.
+2. Start state.
+3. Goal state.
+4. Actions.
+5. Cost.
+
+### Grid Representation:
+
+> The simplest way to represent a search space for a flying vehicle is in form of a 2D grid.
+
+> The grid cells containing the obstacles can be indicated as infeasible and off-limits to the vehicle and remaining grid cells can be indicated as free space.
+
+> The vehicle is allowed to perform actions to reach the goal state and move from cell to cell, and for simplicity cost associated with such action can be taken as one.
+
+
+![Simple_Grid_Representation](Images/Grid_Representation.png)
+
+> The basic process of searching involves taking a partial plan performing an action and adding the new achieved state to the previous partial plan until the goal state is reached.
+
+### Simple Plan:
+
+![simple_plan](Images/search_plan.png)
+
+Plan = [Start, x1, x2, x3, Goal]
+
+> A partial plan is a plan that does not reach the goal, but contains a list of states and actions moving away from the starting state on the way to Goal state.
+
+ 

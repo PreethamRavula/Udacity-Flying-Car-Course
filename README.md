@@ -403,3 +403,22 @@ takeoff(target_altitude)	command the drone to takeoff to the specified altitude 
 
 
 ![Drone_parts](Images/Bitcraze_drone_parts.jpg)
+
+
+## Modifications to the code:
+
+> Following modifications are needed for the backyard flyer script for porting the code onto Crazyflie 2.x drone:
+
+- update the connection
+
+
+- modify arming and disarming flow
+
+
+- update waypoints
+
+
+- update takeoff target altitude
+
+
+- update waypoint acceptance thresholds

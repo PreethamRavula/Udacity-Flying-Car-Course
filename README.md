@@ -466,4 +466,48 @@ Plan = [Start, x1, x2, x3, Goal]
 
 > A partial plan is a plan that does not reach the goal, but contains a list of states and actions moving away from the starting state on the way to Goal state.
 
- 
+ > One way to go about making partial plans is to start making list of all possible partial plans and choose one and add resulting state to the plan, we choose such a state that doesn't run into obstacles or let us visit the already visited state, now such plan which visits previous states is a bad plan and avoid them at all costs.
+
+### Partial Plans:
+
+> Since the beginning we have to start exploring every option and each option is a new partial plan, now as you expand each plan new partial plans may rise out of that and some plans may become dead plans, but nonetheless its still a partial plan.
+
+There are 2 strategies to consider on how to expand the partial plans:
+
+1. Breadth-First Search:
+
+- Expanding the shortest partial plan on the list, guaranteed to find shortest path from start to goal.
+
+> In BFS the way we add state to visited list is after taking plan to that state off the stack and knowing that it is the lowest cost path on the stack and also the lowest cost path to that state and then it can add to the visited list and continue the search again, this can make BFS computationally expensive.
+
+2. Depth-First Search:
+
+- Another method is to simply expand a partial plan using some action and if its successful keep applying it until goal.
+
+> This type of search even though applying the successful action may not progress us towards the goal and plan may not be the shortest one or the best one, so its basically depending on luck with this one.
+
+> In cases of flying cars we can use a hybrid breadth first search plan which takes into consideration the information we have about the environment to progress towards the goal.
+
+Breadth First Search can be implemented in following manner:
+
+- Grid world is represented using a Numpy array, Zeros for free space and ones for obstacles
+
+- We'll keep track of cells possible to expand into using queues, visited cells using sets and partial plans with dictionaries.
+
+### A* Search Method:
+
+![A_star_search](Images/A*_Method)
+
+- A* algorithm is simple yet elegant way of efficiently finding the lowest cost path from start to goal.
+
+- we make use of Priority queue to assign cost for every action.
+
+- we use cost and heuristics to find the lowest cost path from start to goal.
+
+- cost is for deciding which nodes takes the lowest cost from current node while heuristic keeps track of the distance to the goal.
+
+- Heuristic can be euclidean or manhattan or any other heuristic that can be admissible(never overestimates the cost of reaching the goal) and consistent(if estimate is always less than or equal to the estimated distance from any neighboring vertex).
+
+- For every decision we take the sum of cost plus heuristic should be the lowest to add the node in to the path.
+
+- ultimately we will find a path that is of the lowest cost.
